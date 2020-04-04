@@ -26,8 +26,7 @@ function primeNumber(n) {
     }
   }
   const primeNumberList = []
-  let num = n * 3 - 3
-  for (let i = 2; i <= num; i++) {
+  for (let i = 2; primeNumberList.length < n; i++) {
     if (checkPrime(i)) {
       primeNumberList.push(i)
     }
@@ -36,7 +35,7 @@ function primeNumber(n) {
 }
 
 // first N fibonanci
-function fibonanci(num) {
+function fibonanciFunc(num) {
   let result = [0, 1]
 
   for (let i = 2; i < num; i++) {
@@ -56,5 +55,5 @@ export {
   sum,
   multiple,
   primeNumber,
-  fibonanci
+  fibonanciFunc
 }
