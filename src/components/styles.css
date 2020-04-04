@@ -34,6 +34,7 @@ input::-webkit-inner-spin-button {
   /* background-color: blueviolet; */
   align-items: center;
   margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .list {
@@ -41,7 +42,7 @@ input::-webkit-inner-spin-button {
   background-color: #81ecec;
   height: 50px;
   width: 50px;
-  margin: 0 5px;
+  margin: 5px;
   justify-content: center;
   align-items: center;
 }
