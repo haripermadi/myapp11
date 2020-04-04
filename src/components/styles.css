@@ -28,3 +28,48 @@ input::-webkit-inner-spin-button {
 .title {
   font-size: 24px;
 }
+
+.container-list {
+  display: flex;
+  /* background-color: blueviolet; */
+  align-items: center;
+  margin: 20px 0;
+}
+
+.list {
+  display: flex;
+  background-color: #81ecec;
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-text {
+  color: #2d3436
+}
+
+.container-prime {
+  display: flex;
+  /* background-color: coral; */
+  align-items: flex-end;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.button-prime {
+  height: 50%;
+}
+
+.button-color {
+  background-color: #00b894;
+  border-color: #00b894;
+}
+
+.button-color:hover{
+  background-color: #55efc4;
+  border-color: #00b894;
+}
