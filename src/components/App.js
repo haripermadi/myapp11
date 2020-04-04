@@ -33,36 +33,39 @@ class App extends React.Component {
     })
   }
 
-  handleCalculate = () => {
-    let num1 = parseInt(this.state.firstNum)
-    let num2 = parseInt(this.state.secNum)
-    this.setState({
-      result: sum(num1, num2)
-    })
+  handleCalculation = (type) => {
+    if (type === 'addition') {
+      let num1 = parseInt(this.state.firstNum)
+      let num2 = parseInt(this.state.secNum)
+      this.setState({
+        result: sum(num1, num2)
+      })
+    } else {
+      let num1 = parseInt(this.state.multiFirstNum)
+      let num2 = parseInt(this.state.multiSecNum)
+      this.setState({
+        multiResult: multiple(num1, num2)
+      })
+
+    }
   }
 
-  handleMultiple = () => {
-    let num1 = parseInt(this.state.multiFirstNum)
-    let num2 = parseInt(this.state.multiSecNum)
-    this.setState({
-      multiResult: multiple(num1, num2)
-    })
+  handleSequence = (type) => {
+    if (type === 'prime') {
+      let result = primeNumber(parseInt(this.state.primeN))
+      this.setState({
+        primeList: result
+      })
+    } else {
+      let result = fibonanciFunc(parseInt(this.state.fibonacciN))
+      this.setState({
+        FibonacciList: result
+      })
+
+    }
   }
 
-  handlePrime = () => {
-    let result = primeNumber(parseInt(this.state.primeN))
-    console.log('prime=======', result)
-    this.setState({
-      primeList: result
-    })
-  }
 
-  handleFibonacci = () => {
-    let result = fibonanciFunc(parseInt(this.state.fibonacciN))
-    this.setState({
-      FibonacciList: result
-    })
-  }
 
   render() {
     console.log('render------', this.state)
@@ -73,18 +76,18 @@ class App extends React.Component {
           onChangeText1={(e) => this.handleInput(e, 'firstNum')}
           onChangeText2={(e) => this.handleInput(e, 'secNum')}
           result={this.state.result}
-          onCalculate={this.handleCalculate} />
+          onCalculate={() => this.handleCalculation('addition')} />
         <Calculation
           title={'Task 2 Multiple'}
           onChangeText1={(e) => this.handleInput(e, 'multiFirstNum')}
           onChangeText2={(e) => this.handleInput(e, 'multiSecNum')}
           result={this.state.multiResult}
-          onCalculate={this.handleMultiple} />
+          onCalculate={() => this.handleCalculation('multiple')} />
         <Sequence
           title='Task 3 N Prime Number'
           desc='Input N to generate prime sequence'
           onChangeText={(e) => this.setState({ primeN: e.target.value })}
-          onGenerate={this.handlePrime}
+          onGenerate={() => this.handleSequence('prime')}
           buttonTitle='Generate Prime'
           dataList={this.state.primeList}
         />
@@ -92,7 +95,7 @@ class App extends React.Component {
           title='Task 4 N Fibonacci Number'
           desc='Input N to generate fibonacci sequence'
           onChangeText={(e) => this.setState({ fibonacciN: e.target.value })}
-          onGenerate={this.handleFibonacci}
+          onGenerate={() => this.handleSequence('fibonacci')}
           buttonTitle='Generate Fibonacci'
           dataList={this.state.FibonacciList}
         />
