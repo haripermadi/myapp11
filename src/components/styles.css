@@ -1,0 +1,30 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.task {
+  margin: 20px 0;
+}
+
+.container-task {
+  display: flex;
+  /* background-color: aqua; */
+  padding: 10px 0;
+  align-items: center;
+}
+
+.icon-style {
+  display: flex;
+  margin: 0 10px;
+}
+
+.result {
+  font-size: 22px;
+}
+
+.title {
+  font-size: 24px;
+}
