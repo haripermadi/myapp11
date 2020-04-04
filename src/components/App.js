@@ -96,24 +96,6 @@ class App extends React.Component {
           buttonTitle='Generate Fibonacci'
           dataList={this.state.FibonacciList}
         />
-        <div className="task">
-          <h3 className="title">Task 4 N Fibonacci Number</h3>
-          <div className="container-prime">
-            <div className="form-group mx-sm-3 mb-2">
-              <label htmlFor="prime" className="small-text">Input N to generate fibonacci sequence</label>
-              <input type="number" className="form-control text-center" placeholder="1" onChange={(e) => this.setState({ primeN: e.target.value })} />
-            </div>
-            <button type="submit" className="btn btn-primary mb-2 button-prime button-color" onClick={this.handlePrime}>Generate Prime</button>
-
-          </div>
-          <div className="container-list">
-            {
-              this.state.primeList && this.state.primeList.map(value => (
-                <div className="list"><span className="list-text">{value}</span></div>
-              ))
-            }
-          </div>
-        </div>
       </div>
     )
   }
